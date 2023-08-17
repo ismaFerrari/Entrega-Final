@@ -1,0 +1,773 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background-image: url(/img/endless-constellation.png);
+}
+
+
+// Mixins
+@mixin skew($angle) {
+    -webkit-transform: skew($angle);
+    -moz-transform: skew($angle);
+    -ms-transform: skew($angle);
+    -o-transform: skew($angle);
+    transform: skew($angle);    
+    }
+
+  // Variables
+    $name-color: #fff;
+    $name-shadow: rgb(253, 0, 169);
+    $background-color: #081c29;
+    $text-color: white;
+
+  // Selectors
+    .block {
+    @include display(flex);
+    @include justify-content(center);
+    @include align-items(center);
+    }
+
+    .block a {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid $name-color;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: $name-color;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    text-decoration: none;
+    }
+    
+    .block a:hover {
+    background: $name-color;
+    box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    }
+
+    .block a:hover::before {
+    @include animation(sh02, 0.5s, 0s, linear);
+    }
+
+    .block a::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: $name-color;
+    box-shadow: 0 0 50px 30px $name-color;
+    @include skew(-20deg);
+    }
+
+    @keyframes sh02 {
+    from {
+        opacity: 0;
+        left: 0%;
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        left: 100%;
+    }
+    }
+
+    .block a:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+    }
+
+    .name {
+    color: $name-color;
+    display: flex;
+    padding-right: 50%;
+    text-shadow: $name-shadow;
+    }
+
+    .block-1 {
+    background-color: $background-color;
+    color: $text-color;
+    display: flex;
+    @include justify-content(flex-end);
+    }
+
+    .block2 {
+    display: flex;
+    @include justify-content(center);
+    @include align-items(center);
+    min-height: 100vh;
+    }
+
+    .block2-1 {
+    position: relative;
+    width: 800px;
+    height: 300px;
+    display: flex;
+    @include justify-content(center);
+    @include align-items(center);
+    background: $background-color;
+    box-shadow: 0px 15px 30px 15px rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    overflow: hidden;
+    }
+/* Index.hmtl (Todo el codigo de arriba)*/
+
+
+/* Codigo de abajo relacionado con "About me" ubicado dentro de la carpeta html */
+
+
+// Mixins
+@mixin skew($angle) {
+    -webkit-transform: skew($angle);
+    -moz-transform: skew($angle);
+    -ms-transform: skew($angle);
+    -o-transform: skew($angle);
+    transform: skew($angle);
+    }
+    
+  // Variables
+    $name-color: #fff;
+    $name-shadow: rgb(253, 0, 169);
+    $background-color: #081c29;
+    $text-color: white;
+
+  // Selectors
+    .prueba {
+    @include display-flex();
+    @include justify-content(center);
+    @include align-items(center);
+    padding: 15px;
+    }
+    
+    .button {
+    position: relative;
+    padding: 5px 10px;
+    border-radius: 7px;
+    border: 1px solid $name-color;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: $name-color;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    }
+
+    .button:hover {
+    background: $name-color;
+    box-shadow: 0 0 30px 5px rgba(0, 142, 236, 0.815);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    }
+
+    .button:hover::before {
+    @include animation(sh02, 0.5s, 0s, linear);
+    }
+
+    .button::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: $name-color;
+    box-shadow: 0 0 50px 30px $name-color;
+    @include skew(-20deg);
+    }
+
+    @keyframes sh02 {
+    from {
+        opacity: 0;
+        left: 0%;
+    }
+    
+    50% {
+        opacity: 1;
+    }
+    
+    to {
+        opacity: 0;
+        left: 100%;
+    }
+    }
+    
+    .button:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+    }
+
+    .button a {
+    font-size: 16px;
+    display: flex;
+    border-radius: 10px;
+    padding: 10px;
+    letter-spacing: 1px;
+    transition: 1s;
+    text-decoration: none;
+    color: $name-color;
+    }
+    
+    .about-container {
+    text-align: center;
+    padding: 20px;
+    }
+
+    .about-image {
+    width: 400px;
+    border-radius: 22px;
+    padding: 10px;
+    box-shadow: #00ccff;
+    border: #d400d4;
+    }
+
+    .cont-textP {
+    padding: 10px;
+    box-shadow: 0px 15px 30px 15px #71797c;
+    border-radius: 20px;
+    background-color: #000000;
+    }
+    
+    .text-personal {
+    font-size: 13px;
+    }
+
+/* Codigo de arriba aboutme.html */
+
+
+
+/* Codigo de abajo relacionado con "Certicates" ubicado dentro de la carpeta html*/
+
+.title-c {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $spacing;
+    color: white;
+    }
+
+    .container8 {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 5em;
+    display: grid;
+    gap: $spacing;
+    place-content: center;
+    width: 400px;
+    }
+
+    @mixin neon-btn {
+    width: 300px;
+    height: 60px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em 5em;
+    text-align: right;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+    transition: all 2s ease-in-out;
+    -webkit-clip-path: polygon(6% 0, 93% 0, 100% 8%, 100% 86%, 90% 89%, 88% 100%, 5% 100%, 0% 85%);
+    clip-path: polygon(6% 0, 93% 0, 100% 8%, 100% 86%, 90% 89%, 88% 100%, 5% 100%, 0% 85%);
+    }
+
+    .neon-btn .span {
+    display: flex;
+    -webkit-clip-path: polygon(6% 0, 93% 0, 100% 8%, 100% 86%, 90% 89%, 88% 100%, 5% 100%, 0% 85%);
+    clip-path: polygon(6% 0, 93% 0, 100% 8%, 100% 86%, 90% 89%, 88% 100%, 5% 100%, 0% 85%);
+    position: absolute;
+    inset: 1px;
+    background-color: #212121;
+    z-index: 1;
+    }
+
+    .neon-btn .txt {
+    text-align: right;
+    position: relative;
+    z-index: 2;
+    color: aliceblue;
+    font-size: 1em;
+    transition: all ease-in-out 2s linear;
+    text-shadow: 0px 0px 1px #4090b5, 0px 0px 1px #9e30a9, 0 0 1px white;
+    }
+
+    .neon-btn::before {
+    content: "";
+    position: absolute;
+    height: 300px;
+    aspect-ratio: 1.5/1;
+    box-shadow: -17px -19px 20px #9e30a9;
+    background-image: conic-gradient(#9e30a9, transparent, transparent, transparent, transparent, transparent, transparent, #9e30a9);
+    animation: rotate 4s linear infinite -2s;
+    }
+
+    .neon-btn::after {
+    content: "";
+    position: absolute;
+    height: 300px;
+    aspect-ratio: 1.5/1;
+    box-shadow: -17px -19px 10px #4090b5;
+    background-image: conic-gradient(#4090b5, transparent, transparent, transparent, transparent, transparent, transparent, transparent, #4090b5);
+    animation: rotate 4s linear infinite;
+    }
+
+    @keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    
+    to {
+        transform: rotate(360deg);
+        }
+    }
+
+
+/* Codigo de arriba relacionado com Certificates */
+
+
+/* Codigo de abajo relacionado com Certificates */
+
+$main-color: #d03645;
+$sub-color: #ffffff;
+$progress-color: #d03645;
+
+.container {
+    padding: 30px 8%;
+}
+
+.main-title {
+    max-width: 700px;
+    margin: 0px auto;
+    text-align: center;
+    font-family: helvetica;
+}
+
+.main-title h1 {
+    position: relative;
+    font-size: 40px;
+    color: $main-color;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+.main-title h1::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: 125%;
+    left: 0;
+    background-color: #808080;
+}
+
+.main-title h1::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: $main-color;
+    top: calc(125% - 1px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.main-title p, h1 {
+    color: $sub-color;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+}
+
+.row .col {
+    flex-basis: 46%;
+}
+
+.row .sub-title h2 {
+    position: relative;
+    color: $sub-color;
+    font-size: 22px;
+    font-family: helvetica;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.row .sub-title h2::before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    top: 125%;
+    left: 0;
+    background-color: #808080;
+}
+
+.row .sub-title h2::after {
+    content: '';
+    position: absolute;
+    width: 25%;
+    height: 3px;
+    top: calc(125% - 1px);
+    left: 0;
+    background-color: $main-color;
+}
+
+.subject {
+    font-size: 18px;
+    font-weight: thin;
+    color: $sub-color;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.progress-bar {
+    position: relative;
+    width: 100%;
+    height: 5px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.progress-bar::after {
+    position: absolute;
+    content: attr(value);
+    top: -35px;
+    right: 0;
+    color: $sub-color;
+    font-size: 18px;
+}
+
+.progress-line {
+    position: absolute;
+    width: 0%;
+    height: 7px;
+    background-color: $progress-color;
+    border-radius: 15px;
+    top: -1px;
+    animation: animate 1.5s cubic-bezier(1, 0.2, 0.2, 1) forwards;
+}
+
+@keyframes animate {
+    100% {
+    width: 100%;
+    }
+}
+
+.progress-line::after {
+    content: '';
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    background-color: $progress-color;
+}
+
+
+/* Codigo de arriba relacionado com skilss */
+
+
+
+/* Codigo de abajo relacionado con contact*/
+
+.princp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .mover {
+    padding: 35px;
+    background-color: rgba(230, 230, 230, 0.074);
+    border: 1px solid rgba(255, 255, 255, 0.222);
+    width: 500px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        max-width: 350px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 20px;
+        position: relative;
+
+        .title {
+        font-size: 28px;
+        color: royalblue;
+        font-weight: 600;
+        letter-spacing: -1px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+
+        &::before, &::after {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            left: 0px;
+            background-color: royalblue;
+        }
+
+        &::before {
+            width: 18px;
+            height: 18px;
+            background-color: royalblue;
+        }
+
+        &::after {
+            width: 18px;
+            height: 18px;
+            animation: pulse 1s linear infinite;
+        }
+        }
+
+        .message, .signin {
+        color: rgba(88, 87, 87, 0.822);
+        font-size: 14px;
+        }
+
+        .signin {
+        text-align: center;
+
+        a {
+            color: royalblue;
+            &:hover {
+            text-decoration: underline royalblue;
+                }
+            }
+        }
+
+        .flex {
+        display: flex;
+        width: 100%;
+        gap: 6px;
+        }
+
+        label {
+        position: relative;
+
+        .input {
+            width: 100%;
+            padding: 10px 10px 20px 10px;
+            outline: 0;
+            border: 1px solid rgba(105, 105, 105, 0.397);
+            border-radius: 10px;
+
+            & + span {
+            position: absolute;
+            left: 10px;
+            top: 15px;
+            color: grey;
+            font-size: 0.9em;
+            cursor: text;
+            transition: 0.3s ease;
+            }
+
+            &:placeholder-shown + span {
+            top: 15px;
+            font-size: 0.9em;
+            }
+
+            &:focus + span, &:valid + span {
+            top: 30px;
+            font-size: 0.7em;
+            font-weight: 600;
+            }
+
+            &:valid + span {
+            color: green;
+                }
+            }
+        }
+
+        .submit {
+        border: none;
+        outline: none;
+        background-color: royalblue;
+        padding: 10px;
+        border-radius: 10px;
+        color: #fff;
+        font-size: 16px;
+        transform: .3s ease;
+
+        &:hover {
+            background-color: rgb(56, 90, 194);
+                }
+            }
+        }
+    }
+}
+
+.hello1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+
+    .hello {
+    width: fit-content;
+    height: fit-content;
+    background-color: rgba(230, 230, 230, 0.074);
+    border: 1px solid rgba(255, 255, 255, 0.222);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 25px;
+    gap: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+
+    .socialContainer {
+        width: 52px;
+        height: 52px;
+        background-color: rgb(44, 44, 44);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition-duration: .3s;
+        border-radius: 50px;
+
+        &:hover {
+        transform: scale(0.9);
+        transition-duration: .3s;
+        }
+
+        &.containerOne:hover {
+        background-color: #d62976;
+        transition-duration: .3s;
+        }
+
+        &.containerTwo:hover {
+        background-color: #00acee;
+        transition-duration: .3s;
+            }
+
+        &.containerThree:hover {
+        background-color: #0072b1;
+        transition-duration: .3s;
+        }
+
+        &.containerFour:hover {
+        background-color: #128C7E;
+        transition-duration: .3s;
+        }
+
+        .socialSvg {
+            width: 17px;
+
+        path {
+            fill: rgb(255, 255, 255);
+            }
+        }
+
+        &:hover .socialSvg {
+        animation: slide-in-top 0.3s both;
+        }
+        }
+    }
+}
+
+@keyframes pulse {
+    from {
+    transform: scale(0.9);
+    opacity: 1;
+    }
+    to {
+    transform: scale(1.8);
+    opacity: 0;
+    }
+}
+
+@keyframes slide-in-top {
+    0% {
+    transform: translateY(-50px);
+    opacity: 0;
+    }
+    100% {
+    transform: translateY(0);
+    opacity: 1;
+    }
+}
+
+
+
+//media query vista mobile
+
+@media (max-width: 770px){
+    .revisar{
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .todo{
+        width: 600px;
+        height: 500px;
+    }
+
+    .block{
+        display: flex;
+    }
+    .block a{
+        width: 200px;
+    }
+    .name{
+        padding: 0 0 0 15px;
+    }
+    .principal{
+        width: 600px;
+        height: 500px;
+        display: flex;
+        align-items: center;
+    }
+    .cont-card{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
